@@ -1,0 +1,122 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+.row{
+    background-color: lightyellow;
+}
+.container1{
+    margin-top: 52px;
+    background-color: gold;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+h2,h4{
+    padding: 10px;
+}
+.mydiv:hover{
+    transform: translateY(-10px);
+}
+.myDiv{
+    margin-top: 380px;
+    font-weight: bold;
+}
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark">{{p}} </h2>
+                <a href="{% url 'pending_queries' %}"><h4 class="text-dark">Pending Queries</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{a}} </h2>
+                <a href="{% url 'accepted_queries' %}"><h4 class="text-dark">Accepted Queries</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{r}} </h2>
+                <a href="{% url 'rejected_queries' %}"><h4 class="text-dark">Rejected Queries</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{all}} </h2>
+                <a href="{% url 'all_queries' %}"><h4 class="text-dark">All Queries</h4></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark">{{p}} </h2>
+                <a href="{% url 'pending_m' %}"><h4 class="text-dark">Pending Magazines</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{a}} </h2>
+                <a href="{% url 'accepted_m' %}"><h4 class="text-dark">Accepted Magazines</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{r}} </h2>
+                <a href="{% url 'rejected_m' %}"><h4 class="text-dark">Rejected Magazines</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{all}} </h2>
+                <a href="{% url 'all_m' %}"><h4 class="text-dark">All Magazines</h4></a>
+            </div>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark">{{p}} </h2>
+                <a href="{% url 'food' %}"><h4 class="text-dark">Food</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{a}} </h2>
+                <a href="{% url 'exercise' %}"><h4 class="text-dark">Exercise</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{r}} </h2>
+                <a href="{% url 'meditation' %}"><h4 class="text-dark">Meditation</h4></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{all}} </h2>
+                <a href="{% url 'event' %}"><h4 class="text-dark">Event</h4></a>
+            </div>
+        </div>
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-dark"> {{all}} </h2>
+                <a href="{% url 'vaccine_upload' %}"><h4 class="text-dark">Vaccine Details</h4></a>
+            </div>
+        </div>
+    </div>
+    <footer class="container myDiv">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded text-center">CopyRight 2020,All Rights Reserved</div>
+    </footer>
+</div>
+
+
+
+{% endblock %}

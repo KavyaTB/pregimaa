@@ -1,0 +1,96 @@
+{% extends 'user_nav.html' %}
+{% load static %}
+{% block body %}
+<style>
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+
+.pageHeadingBig {
+    margin: 30px 5px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Nunito',
+        sans-serif;
+}
+
+
+.magazine_table td img {
+    border-radius: 3px;
+    height:300px;
+    transition: all .4s ease-out;
+    margin-bottom: 10px;
+}
+
+.magazine_table td img:hover {
+    box-shadow: 0 3px 6px rgba(80, 77, 77, 0.459);
+    opacity:0.6;
+}
+
+.magazine_table{
+    width:100%;
+    margin:auto;
+}
+.magazine_table tr{
+    margin:2rem;
+}
+
+.magazine_table td{
+    padding:2rem 5rem;
+    font-size: 1.5rem;
+    font-weight:900;
+
+}
+.buton{
+    margin-top: 20px;
+}
+
+</style>
+<div class="container buton">
+    <a href="{% url 'upload_m' %}" type="button" class="bb btn btn-primary">Give Recommendations</a>
+    <a href="{% url 'view_m' %}" type="button" class="bb btn btn-primary">View Recommendations</a>
+</div>
+
+<h1 class="pageHeadingBig">You Might Also View</h1>
+
+<div class="container magazine">
+    <table class="magazine_table" border="0rem">
+        <tr><td><a href='https://freeforbook.com/shop/professional-beauty-september-2020/'><img class="magazine_img" src="{% static 'images/magazine1.jpg' %}"></a>
+            <br>Professional Beauty September 2020</td>
+            <td><a href='https://freeforbook.com/shop/simply-beautiful-gardens-december-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine2.jpg' %}"></a>
+            <br>Simply Beautiful Gardens</td>
+            <td><a href='https://freeforbook.com/shop/crafts-beautiful-january-2021/'>	<img  class="magazine_img" src="{% static 'images/magazine3.jpg' %}"></a>
+            <br>Crafts Beautiful</td>
+        </tr>
+        <tr><td><a href='https://freeforbook.com/shop/hair-june-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine4.jpg' %}"></a>
+            <br>Hair Journal 2020</td>
+            <td><a href='https://freeforbook.com/shop/hairdressers-journal-january-2021/'>	<img class="magazine_img" src="{% static 'images/magazine 6.jpg' %}"></a>
+            <br>Hairdressers Journal – January 2021</td>
+            <td><a href='https://freeforbook.com/shop/today-s-dietitian-june-july-2020/'>	<img  class="magazine_img" src="{% static 'images/magazine5.jpg' %}"></a>
+            <br>Today’s Dietitian – June-July 2020</td>
+        </tr>
+        <tr><td><a href='https://freeforbook.com/shop/landscape-architecture-magazine-usa-march-2021/'>	<img class="magazine_img" src="{% static 'images/magazine7.jpg' %}"></a>
+            <br>Landscape Architecture Magazine USA – March 2021</td>
+           <td><a href='https://freeforbook.com/shop/astronomy-march-2021/'>	<img class="magazine_img" src="{% static 'images/magazine8.jpg' %}"></a>
+            <br>Astronomy – March 2021</td>
+            <td><a href='https://freeforbook.com/shop/vegan-life-february-2021/'>	<img class="magazine_img" src="{% static 'images/magazine9.jpg' %}"></a>
+            <br>Vegan Life – February 2021</td>
+        </tr>
+
+    </table>
+</div>
+{% endblock %}

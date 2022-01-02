@@ -1,0 +1,55 @@
+{% extends 'user_nav.html' %}
+{% load static %}
+{% block body %}
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css"> -->
+
+<style>
+    .doabout{
+        margin-top:30px;
+        padding-top: 10px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="doabout text-center"></i><b>View Events</b></h2>
+    <hr>
+    <table class="table table=bordered" id="example">
+        <thead>
+            <tr>
+                <th>Sr.no.</th>
+                <th>Schedule Name</th>
+                <th>Event Type</th>
+                <th>Schedule Date</th>
+                <th>Schedule Time From</th>
+                <th>Schedule Time To</th>
+                <th>Description</th>
+            </tr>
+            {% for i in notes %}
+            <tr>
+                <th>{{ forloop.counter }}</th>
+                <th>{{ i.schedulename }}</th>
+                <th>{{ i.eventtype}}</th>
+                <th>{{ i.scheduledate}}</th>
+                <th>{{ i.scheduletimefrom}}</th>
+                <th>{{ i.scheduletimeto}}</th>
+                <th>{{ i.scheduledDes }}</th>
+            </tr>
+            {% endfor %}
+        </thead>
+
+    </table>
+
+</div>
+{% endblock %}

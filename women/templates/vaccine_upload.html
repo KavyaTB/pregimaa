@@ -1,0 +1,108 @@
+{% extends 'admin_nav.html' %}
+
+{% load static %}
+{% block body %}
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css"> -->
+
+<style>
+    .doabout{
+        margin-top:30px;
+        padding-top: 10px;
+    }
+</style>
+
+
+
+<div class="container mt-5">
+    <h2 class="doabout text-center"></i><b>VACCINATION DETAILS UPLOAD</b></h2>
+    <hr>
+  
+    <div class="row">
+
+        <div class="col-sm-6">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+
+                </div>
+                <div class="form-group">
+                    <label>Vaccination For :</label>
+<br>
+<div style="display: inline-flex;margin-left: 130px;">
+    <span style="padding-right: 82px;">
+      
+            <label>Baby</label>
+       <input type="radio" value="baby" name="vtype" class="form-control" style="font-size: 5px;"   checked> 
+    </span>
+    <span >
+  
+            <label>Mother</label>
+       
+         <input type="radio" value="mother" name="vtype" class="form-control" style="font-size: 5px;"  >
+       </span>
+</div>
+                  
+                  
+                    
+                </div>
+                <div class="form-group">
+                    <label>Vaccination Name:</label>
+                    <input type="text" name="vname" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>When to give:</label>
+                    <input type="text" name="vdur" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>Dose:</label>
+                    <input type="text" name="vdose" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>Route:</label>
+                    <input type="text" name="vroute" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>Site:</label>
+                    <input type="text" name="vsite" class="form-control" >
+                  </div>
+            
+
+                <button type="submit" class="bb btn btn-warning">Upload</button><hr><hr>
+              </form>
+
+        </div>
+
+        <div class="col-sm-6">
+            <img src="{% static 'images/Vaccine_Baby.jpg' %}"  class="img-thumbnail" style="width:110%">
+        </div>
+    </div>
+</div>
+
+
+{% ifequal error "no" %}
+<script>
+    alert('event uploaded Successfully');
+    // window.location=("{% url 'login' %}");
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Something went Wrong, Try again');
+</script>
+{% endifequal %}
+
+{% endblock %}
